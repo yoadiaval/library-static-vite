@@ -1,10 +1,10 @@
+import BookCard from "./BookCard";
 import { useContext } from "react";
 import BooksContext from "../context/Books";
-import BookCard from "./BookCard";
 
 function BookList() {
-  const { books } = useContext(BooksContext);
 
+    const {books}= useContext(BooksContext)
   const renderedList = books.map((item, index) => {
     return <BookCard key={index} value={item.book} />;
   });

@@ -1,32 +1,82 @@
+import { useContext, useState } from "react";
+import BooksContext from "../context/Books";
+
 function SideBar() {
+  const [numPages, setNumPages] = useState(1200);
+  const [selection, setSelection] = useState("");
+  const [placeHolder, setPlaceHolder] = useState("Nothing selected");
+
+  const { allGenres, FilterByPage, FilterBySelection, FilterGenre, clear } =
+    useContext(BooksContext);
+
+  const renderedGenre = allGenres.map((item, index) => {
+    return (
+      <li key={index} onClick={() => FilterGenre(item)}>
+        {item}
+      </li>
+    );
+  });
+
+  const handlChange = (event) => {
+    setSelection(event.target.value);
+    FilterBySelection(selection, placeHolder);
+  };
+
+  const handleSelection = (event) => {
+    const newPlaceHolder = event.target.value;
+    setPlaceHolder(newPlaceHolder);
+  };
+
+  const HandleNumPages = (event) => {
+    setNumPages(event.target.value);
+    FilterByPage(numPages);
+  };
+
+  const handleClear = () => {
+    setPlaceHolder("Nothing selected");
+    setNumPages(1200);
+    clear();
+  };
+
   return (
-    <div>
+    <div className="flex flex-col space-y-9">
       <div>
-        <select>
+        <select onChange={handleSelection}>
           <option value="Nothing selected">Search a book By</option>
           <option value="title">Title</option>
           <option value="year">Year</option>
           <option value="ISBN">ISBN</option>
           <option value="author">Author</option>
         </select>
-        <input />
+        <input
+          onChange={handlChange}
+          placeholder={`Enter: ${placeHolder}`}
+          value={selection}
+          className="border rounded bg-gray-100"
+        />
       </div>
       <div>
         <h3>Filter By Page</h3>
-        <input type="range" min="0" max="1200" />
+        <input
+          type="range"
+          min="0"
+          max="1200"
+          value={numPages}
+          onChange={HandleNumPages}
+        />
         <p>Valor actual: </p>
       </div>
       <div>
         <h2 className="font-bold">Filter By Genre</h2>
-        <ul className="text-slate-500">
-          <li>1</li>
-          <li>1</li>
-          <li>1</li>
-          <li>1</li>
-        </ul>
+        <ul className="text-slate-500">{renderedGenre}</ul>
       </div>
 
-      <button className="bg-red text-white">Clear All</button>
+      <button
+        onClick={handleClear}
+        className="bg-black text-white rounded w-fit py-1 px-2"
+      >
+        Clear All
+      </button>
     </div>
   );
 }
