@@ -2,6 +2,7 @@ import Link from "./Link";
 import { FiMenu } from "react-icons/fi";
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import { CiFacebook, CiTwitter, CiInstagram } from "react-icons/ci";
 
 function Header() {
   const [nav, setNav] = useState(false);
@@ -47,12 +48,17 @@ function Header() {
                 : "fixed z-10 left-0 top-0 w-[60%] h-full bg-black  ease-in-out duration-500 p-8"
             }
           >
-            <h1 className="w-full  font-bold text-3xl text-amber-400 pt-5">
+            <h1 className="w-full  font-bold text-3xl border-b text-amber-400 pt-5">
               Book Lover
             </h1>
             <ul className="pt-24 uppercase flex flex-col space-y-5">
               {renderedLinks}
             </ul>
+            <div className="flex justify-center space-x-3 fixed bottom-2 text-amber-400">
+              <CiFacebook size={25} />
+              <CiTwitter size={25} />
+              <CiInstagram size={25} />
+            </div>
           </div>
         </div>
       </div>

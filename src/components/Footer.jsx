@@ -30,10 +30,10 @@ function Footer() {
       <section>
         <h3 className="text-2xl text-amber-400">Social Media</h3>
 
-        <div className="flex">
-          <CiFacebook size={30} />
-          <CiTwitter size={30} />
-          <CiInstagram size={30} />
+        <div className="flex justify-around ">
+          <CiFacebook size={25} />
+          <CiTwitter size={25} />
+          <CiInstagram size={25} />
         </div>
       </section>
     </div>

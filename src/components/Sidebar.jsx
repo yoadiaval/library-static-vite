@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import BooksContext from "../context/Books";
+import Link from "./Link";
 
 function SideBar() {
   const [numPages, setNumPages] = useState(1200);
@@ -11,7 +12,7 @@ function SideBar() {
 
   const renderedGenre = allGenres.map((item, index) => {
     return (
-      <li key={index} onClick={() => FilterGenre(item)}>
+      <li className="" key={index} onClick={() => FilterGenre(item)}>
         {item}
       </li>
     );
@@ -39,9 +40,9 @@ function SideBar() {
   };
 
   return (
-    <div className="flex flex-col space-y-9">
+    <div className="flex flex-col space-y-9 bg-stone-200 p-6 rounded-xl">
       <div>
-        <select onChange={handleSelection}>
+        <select  onChange={handleSelection}>
           <option value="Nothing selected">Search a book By</option>
           <option value="title">Title</option>
           <option value="year">Year</option>
@@ -52,7 +53,7 @@ function SideBar() {
           onChange={handlChange}
           placeholder={`Enter: ${placeHolder}`}
           value={selection}
-          className="border rounded bg-gray-100 px-2"
+          className="border  bg-gray-100 px-2"
         />
       </div>
       <div>
@@ -64,7 +65,7 @@ function SideBar() {
           value={numPages}
           onChange={HandleNumPages}
         />
-        <p>Valor actual: </p>
+        <p>Valor actual: {numPages} </p>
       </div>
       <div>
         <h2 className="font-bold">Filter By Genre</h2>
