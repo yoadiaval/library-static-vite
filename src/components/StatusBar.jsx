@@ -10,7 +10,7 @@ function StatusBar() {
   };
 
   return (
-    <div className="flex w-full justify-between place-items-center">
+    <div className="flex w-full justify-between px-8 place-items-center">
       <div> 10 pages shown</div>
       <div className="w-[250px] h-[1px] bg-gray-300"></div>
       <select onChange={handleClick}>

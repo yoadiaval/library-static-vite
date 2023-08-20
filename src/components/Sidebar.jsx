@@ -52,7 +52,7 @@ function SideBar() {
           onChange={handlChange}
           placeholder={`Enter: ${placeHolder}`}
           value={selection}
-          className="border rounded bg-gray-100"
+          className="border rounded bg-gray-100 px-2"
         />
       </div>
       <div>
