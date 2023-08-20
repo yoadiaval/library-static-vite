@@ -1,7 +1,7 @@
 function ContentModal({ value }) {
   console.log(value);
   return (
-    <div className="flex flex-col sm:flex-row h-auto place-items-center space-y-10 space-x-10">
+    <div className="  flex flex-col sm:flex-row h-auto place-items-center space-y-10 space-x-10">
       <figure className="w-[120px] sm:w-[250px] h-auto">
         <img
           className="drop-shadow-xl"
@@ -14,7 +14,7 @@ function ContentModal({ value }) {
           <p className="font-bold md:text-2xl">{value.title}</p>
           <p className="place-self-center ml-[3px]">({value.year})</p>
         </div>
-        <div className="text-neutral-500">
+        <div className="text-black">
           <span className="font-bold md:text-xl">Genre: </span>{" "}
           <p>{value.genre}</p>
           <span className="font-bold md:text-xl">Synopsis:</span>{" "}
