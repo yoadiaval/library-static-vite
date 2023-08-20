@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import NavigationContext from "../context/navigation";
+import NavigationContext from "../context/Navigation";
 import PropTypes from "prop-types";
 
 //route retorna el hijo si coincide con el path que está recogiendo de lo contrario no retorna nada.
