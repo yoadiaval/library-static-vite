@@ -1,5 +1,6 @@
+import PropTypes from "prop-types";
+
 function ContentModal({ value }) {
-  console.log(value);
   return (
     <div className="  flex flex-col sm:flex-row h-auto place-items-center space-y-10 space-x-10">
       <figure className="w-[120px] sm:w-[250px] h-auto">
@@ -29,4 +30,5 @@ function ContentModal({ value }) {
   );
 }
 
+ContentModal.propTypes = { value: PropTypes.node.isRequired };
 export default ContentModal;

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import NavigationContext from "../context/navigation";
+import PropTypes from "prop-types";
 
 //route retorna el hijo si coincide con el path que está recogiendo de lo contrario no retorna nada.
 function Route({ children, path }) {
@@ -11,4 +12,6 @@ function Route({ children, path }) {
   return null;
 }
 
+Route.propTypes = { children: PropTypes.node.isRequired };
+Route.propTypes = { path: PropTypes.node.isRequired };
 export default Route;

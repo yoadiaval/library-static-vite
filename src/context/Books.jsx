@@ -3,6 +3,7 @@ const Genres = ["all", ...new Set(library.map((item) => item.book.genre))];
 import { createContext, useCallback, useState } from "react";
 import axios from "axios";
 const BooksContext = createContext();
+import PropTypes from "prop-types";
 
 function Provider({ children }) {
   const [books, setBooks] = useState(library);
@@ -12,7 +13,7 @@ function Provider({ children }) {
   const fetchSelectedBooks = useCallback(async () => {
     const response = await axios.get("http://localhost:3001/selectedBooks");
     setSelectedBooks(response.data);
-  });
+  }, []);
 
   const addListSelected = async (book) => {
     const exist = selectedBooks.some((item) => {
@@ -102,5 +103,6 @@ function Provider({ children }) {
   );
 }
 
+Provider.propTypes = { children: PropTypes.node.isRequired };
 export { Provider };
 export default BooksContext;

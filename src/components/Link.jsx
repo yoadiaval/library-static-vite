@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { useContext } from "react";
-import NavigationContext from "../context/Navigation";
+import NavigationContext from "../context/navigation";
+import PropTypes from "prop-types";
 
 function Link({ children, to, className, activeClassName }) {
   const { navigate, currentPath } = useContext(NavigationContext);
@@ -22,5 +23,10 @@ function Link({ children, to, className, activeClassName }) {
     </a>
   );
 }
-
+Link.propTypes = {
+  children: PropTypes.node.isRequired,
+  to: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
+  activeClassName: PropTypes.string.isRequired,
+};
 export default Link;

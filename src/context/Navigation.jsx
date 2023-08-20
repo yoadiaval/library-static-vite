@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 const NavigationContext = createContext();
 
@@ -25,6 +26,6 @@ function NavigationProvider({ children }) {
     </NavigationContext.Provider>
   );
 }
-
+NavigationProvider.propTypes = { children: PropTypes.node.isRequired };
 export { NavigationProvider };
 export default NavigationContext;
