@@ -25,17 +25,8 @@ function BookCard(value) {
     setShowModal(false);
   };
 
-  const closeButton = (
-    <button
-      className="text-white bg-black px-[4px] py-[2px] rounded"
-      onClick={handleClose}
-    >
-      Close
-    </button>
-  );
-
   const modal = (
-    <Modal onClose={handleClose} closeButton={closeButton}>
+    <Modal onClose={handleClose}>
       <ContentModal value={book} />
     </Modal>
   );

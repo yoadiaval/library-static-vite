@@ -69,9 +69,9 @@ function Home() {
         <section className="flex flex-wrap justify-around w-4/5 mx-auto place-content-center mt-[-80px] mb-[-100px]">
           {renderedArticles}
         </section>
-        <section className="flex p-4 place-content-center place-items-center mt-[200px] space-x-[60px]">
-          <div className="w-[500px] ">
-            <h3 className="font-bold text-xl">Join our newsletter</h3>
+        <section className="flex flex-col md:flex-row p-4 place-content-center place-items-center mt-[200px] space-y-[60px] space-x-[60px]">
+          <div className="w-[500px] p-8">
+            <h3 className="font-bold text-xl ">Join our newsletter</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
               sint unde quaerat ratione soluta veniam provident adipisci cumque

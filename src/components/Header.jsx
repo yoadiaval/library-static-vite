@@ -33,7 +33,7 @@ function Header() {
           </ul>
           <div
             onClick={handleNav}
-            className="block fixed right-5 top-10 p-1 rounded bg-black md:hidden"
+            className="block fixed right-5 top-10 p-1 rounded z-10 bg-black md:hidden"
           >
             {!nav ? (
               <FiMenu size={20} className="text-white" />

@@ -40,7 +40,7 @@ function SideBar() {
   };
 
   return (
-    <div className="flex flex-col space-y-9 bg-stone-200 p-6 rounded-xl">
+    <div className="flex min-w-fit flex-col space-y-9 bg-stone-200 p-6 rounded-xl">
       <div>
         <select  onChange={handleSelection}>
           <option value="Nothing selected">Search a book By</option>
@@ -51,7 +51,7 @@ function SideBar() {
         </select>
         <input
           onChange={handlChange}
-          placeholder={`Enter: ${placeHolder}`}
+          placeholder={placeHolder}
           value={selection}
           className="border  bg-gray-100 px-2"
         />
